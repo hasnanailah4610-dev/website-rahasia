@@ -1,77 +1,133 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Just You</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetang Naila</title>
 <style>
-    body {
-        margin: 0;
-        background: #0b0b0b;
-        overflow: hidden;
-        font-family: 'Courier New', monospace;
-    }
+    body{
+    margin: 0;
+    background-color: rgb(178, 127, 227);
+}
 
-    canvas {
-        display: block;
-    }
+h1{
+    margin: 0;
+    padding: 25px;
+    width: 100%;
+
+    background: rgb(105, 15, 208);
+    color: white;
+
+    font-size: 45px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    text-align: center;
+
+    box-sizing: border-box;
+}
+.bubble{
+    width: 70%;
+    margin: 40px auto;
+    padding: 20px;
+
+    background: linear-gradient(135deg,#ffffff,#f6e8ff);
+    border: 3px solid #9d4edd;
+    border-radius: 30px;
+
+    color: #5b2c83;
+    font-size: 22px;
+    font-family: 'Nunito', sans-serif;
+
+    box-shadow: 0 10px 25px rgba(123,44,191,.25);
+}
+.card-container{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.card{
+    width: 350px;
+    background: white;
+    border-radius: 25px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.foto img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.biodata h2{
+    color: #7b2cbf;
+    text-align: center;
+}
+.card-besar{
+    width: 78%;
+    margin-top: 40px;
+    margin-left: 130px;
+
+    background: white;
+    padding: 30px;
+
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.card-besar h2{
+    color: #7b2cbf;
+    text-align: center;
+}
+
+.card-besar p{
+    font-size: 20px;
+    line-height: 1.8;
+    color: #5b2c83;
+}
 </style>
 </head>
 <body>
+    <h1>
+        Portopolio orang imut
+    </h1>
+   <p class="bubble">
+    Halloowww, salam kenal aku Nailaaa. web ini isinya tentang akuu, kalo kalian mau berkenalan dengan ku, boleh di baca aja yaawww.
+   </p>
 
-<canvas id="c"></canvas>
+   <div class="card-container">
 
-<script>
-const canvas = document.getElementById("c");
-const ctx = canvas.getContext("2d");
+    <div class="card foto">
+        <img src="c:\Users\WINDOWS 10\OneDrive\Pictures\Saved Pictures\WhatsApp Image 2026-07-11 at 15.48.14.jpeg" alt="Foto Naila">
+    </div>
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    <div class="card biodata">
+        <h2>Ini Aku💜</h2>
 
-let text = "I LOVE YOU";
-let particles = [];
+        <p><b>Nama :</b> Hasna Nailah S atau Naila ajaa</p>
+        <p><b>Sekolah :</b> SD di Depok, SMP di Bogor, SMK di Cianjur</p>
+        <p><b>Jurusan :</b> PPLG</p>
+        <p><b>Tempat Tanggal Lahir :</b> Jakarta Selatan, Bintaro. 6-4-2010</p>
+        <p><b>Hobi :</b> Nulis Novel, dengerin musik, nonton kartun, ngedit</p>
+        <p><b>Cita-Cita :</b> Punya banyak duit hehehe</p>
+        <p><b>Makanan Favorite :</b> Berbagai macam mie, jajanan pinggir jalan, Pizza juga suka, semua makanan juga kayaknya enak hehe...</p>
+        <p><b>Favorite Person :</b> Adalah Pokoknya wkwk</p>
+        <p><b>Sisi Diri :</b> Cencer, Ambivert, aslinya lucu</p>
+        <p><b>Pesan :</b> Ga ada si, paling yaaa salam kenal ajahh xixi</p>
+    </div>
 
-function heart(t) {
-    let x = 16 * Math.pow(Math.sin(t), 3);
-    let y = 13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t);
-    return {x, y};
-}
+</div>
 
-// buat titik-titik membentuk hati
-for (let i = 0; i < 200; i++) {
-    let t = Math.random() * Math.PI * 2;
-    let pos = heart(t);
-    particles.push({
-        baseX: pos.x,
-        baseY: pos.y,
-        t: t,
-        offset: Math.random() * 100
-    });
-}
+<div class="card-besar">
+    <h2>🌸 Tentang Aku Lebih Banyak</h2>
 
-function draw(time) {
-    ctx.fillStyle = "rgba(11,11,11,0.3)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = "#ff4da6"; // pink
-    ctx.font = "14px monospace";
-
-    particles.forEach((p, i) => {
-        let scale = 20;
-
-        // efek gerak halus (denyut dikit)
-        let pulse = Math.sin(time/500 + p.offset) * 0.5;
-
-        let x = canvas.width/2 + (p.baseX * (scale + pulse));
-        let y = canvas.height/2 - (p.baseY * (scale + pulse));
-
-        ctx.fillText(text, x, y);
-    });
-
-    requestAnimationFrame(draw);
-}
-
-draw();
-</script>
+    <p>
+     Ga ada yang menarik dalam diri aku, aku juga sama seperti kalian.. sedang mempelajari banyak hal yang ga pernah aku tau sebelumnya.
+     jadi kita bisa jadi teman baik dan bekerja sama barengg biar bisa bareng-bareng menyelesaikan banyak masalahhh. jyujyur sebenarnya always sendiri
+     tapi aku bakal seneng banget bisa temenan sama kalian semua hehehe. yauda segitu aja tentang akuu, salam kenal yacchhh...
+    </p>
+</div>
 
 </body>
 </html>
